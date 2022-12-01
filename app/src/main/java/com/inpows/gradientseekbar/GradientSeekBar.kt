@@ -263,11 +263,11 @@ class GradientSeekBar : View {
             ta.getColorStateList(R.styleable.GradientSeekBar_gsb_tick_texts_color),
             builder.tickTextsColor
         )
-        val tickTextCharSequences = ta.getTextArray(R.styleable.GradientSeekBar_gsb_tick_texts_array).joinToString(
+        val tickTextCharSequences = ta.getTextArray(R.styleable.GradientSeekBar_gsb_tick_texts_array)?.joinToString(
             separator = "|~|"
         )
         var tickTextArray = arrayOf<String>()
-        tickTextCharSequences.split("|~|").forEach {
+        tickTextCharSequences?.split("|~|")?.forEach {
             tickTextArray += it
         }
         mTickTextsCustomArray = tickTextArray
